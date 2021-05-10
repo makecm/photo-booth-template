@@ -1,25 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import 'minireset.css'
+import Shapes from './Shapes';
+import { ReactComponent as Icon } from './icon.svg'
 
-function App() {
+function App({ photo }) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Icon />
+      {photo && <img alt="avatar" src={photo} />}
+      <Shapes />
     </div>
   );
 }
 
 export default App;
+
+App.defaultProps = {
+  photo: 'https://images.unsplash.com/photo-1620589025695-d6a796305be5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3034&q=80',
+}
