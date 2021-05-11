@@ -23,8 +23,12 @@
 
 .App  .icon {
   margin: 2rem;
-  width: 3rem;
-  height: 3rem;
+  width: 5rem;
+  height: 5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
 }
 
 img {
@@ -35,10 +39,39 @@ img {
   bottom: 0;
   object-fit: cover;
   object-position: center;
-  filter: grayscale(1) brightness(0.8);
-  mix-blend-mode: screen;
+  filter: grayscale(1) brightness(0.6);
   width: 100%;
   height: 100% !important;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  mix-blend-mode: darken;
+  background-color: #EF6690;
+  z-index: 1;
+}
+
+.container:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  mix-blend-mode: lighten;
+  background-color: #4C51BF;
+  z-index: 1;
 }
 
 .shape-container {
@@ -67,8 +100,8 @@ img {
   stroke: url(#bggrad);
   stroke-linecap: round;
   animation: bgmove 200s linear infinite;
-  mix-blend-mode: screen;
-  opacity: 0.8;
+  mix-blend-mode: overlay;
+  opacity: 0.6;
 }
 
 @keyframes bgmove {

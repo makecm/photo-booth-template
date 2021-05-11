@@ -7,7 +7,9 @@ function App({ photo }) {
   return (
     <div className="App">
       <Icon />
-      {photo && <img alt="avatar" src={photo} />}
+      <div class="container">
+        {photo && <img alt="avatar" src={photo} />}
+      </div>
       <Shapes />
     </div>
   );
